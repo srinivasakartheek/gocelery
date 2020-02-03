@@ -1,6 +1,6 @@
-module github.com/gocelery/gocelery
+module github.com/srinivasakartheek/gocelery
 
-go 1.13
+go 1.12
 
 require (
 	github.com/gomodule/redigo v2.0.0+incompatible
