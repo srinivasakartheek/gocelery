@@ -56,6 +56,9 @@ func (w *CeleryWorker) StartWorkerWithContext(ctx context.Context) {
 						continue
 					}
 
+					log.Printf("Running Task Message with ID %s, args %+v and kwargs %+v", taskMessage.ID,
+						taskMessage.Args, taskMessage.Kwargs)
+
 					// run task
 					resultMsg, err := w.RunTask(taskMessage)
 					if err != nil {
