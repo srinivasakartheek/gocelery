@@ -128,6 +128,8 @@ func (w *CeleryWorker) RunTask(message *TaskMessage) (*ResultMessage, error) {
 		return nil, fmt.Errorf("task %s is not registered", message.Task)
 	}
 
+	log.Printf("Got task %+v from worker", task)
+
 	// convert to task interface
 	taskInterface, ok := task.(CeleryTask)
 	if ok {
